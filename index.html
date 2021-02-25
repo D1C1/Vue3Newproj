@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <title>calculator</title>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h1 class="display-4">Morten's calculator <i class="fas fa-calculator"></i></h1>
+        <p class="lead">Velkommen</p>
+        <hr class="my-4">
+    </div>
+    <div id="app">
+        <input v-model.number="num" type="number" step="1" placeholder="type a number" />
+        <select v-model="operation" name="operation">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input v-model.number="num1" type="number" step="1" placeholder="type a number" />
+        <button v-on:click=Calculate() class="btn btn-light" type="button"><i class="fas fa-equals"></i></button>
+        {{result}}
+    </div>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
